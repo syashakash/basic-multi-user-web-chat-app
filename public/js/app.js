@@ -1,5 +1,10 @@
 var socket = io();
 
-socket.on('connection', function() {
-    console.log("USER CONNECTED vis SOCKET");
+socket.on('connect', function() {
+    console.log("CONNECTED TO SOCKET SEREVR");
+});
+
+socket.on('message', function(message) {
+    console.log("New Message: ");
+    console.log(message.text);
 });
