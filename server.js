@@ -16,7 +16,8 @@ io.on('connection', function(socket) {
     });
 
     socket.emit('message', {
-        text: 'we will we will rock you',
+        name: 'Samantha',
+        text: 'Hello from the server\'s side',
         timeStamp: __moment().valueOf()
     });
 });
