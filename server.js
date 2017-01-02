@@ -8,7 +8,6 @@ app.use(__express.static(__dirname + '/public'));
 
 io.on('connection', function(socket) {
     console.log("USER CONNECTED via SOCKET");
-
     socket.on('message', function(message) {
         console.log("Message received: " + message.text);
         io.emit('message', message);
