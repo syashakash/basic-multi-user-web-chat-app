@@ -3,9 +3,13 @@ var room = getQueryVariable('room');
 var socket = io();
 
 console.log(name + ' wants to join ' + room);
-
+jQuery('.chat-room').text(room);
 socket.on('connect', function() {
-    console.log("CONNECTED TO SOCKET SERVeR");
+    console.log("CONNECTED TO SOCKET SERVER");
+    socket.emit('joinRoom', {
+        name: name,
+        room: room
+    });
 });
 
 socket.on('message', function(message) {
