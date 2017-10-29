@@ -28,7 +28,7 @@ function sendcurrentusers(socket)
 }
 
 io.on('connection', function(socket) {
-    console.log("USER CONNECTED via SOCKET");
+    console.log("User connected via Socket");
     
     socket.on('disconnect', function() {
         if(typeof clientInfo[socket.id] !== 'undefined') {
